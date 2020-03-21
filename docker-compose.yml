@@ -2,7 +2,7 @@
 # 若需要指定image 則取消 build 標記 . 需要docker-compose up -d 時build ,則取消image標記
 version: '3'
 services:
-  web:
+  nginx:
     #image: nginx
     build:
       context: ./
