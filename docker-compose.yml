@@ -1,0 +1,15 @@
+# 若使用持久化,不須docker build 時將html放入docker image,則將volume 部分取消標記
+# 若需要指定image 則取消 build 標記 . 需要docker-compose up -d 時build ,則取消image標記
+version: '3'
+services:
+  web:
+    #image: nginx
+    build:
+      context: ./
+      dockerfile: Dockerfile
+    container_name: nginx
+    hostname: nginx
+    #volumes:
+    #- ./html:/usr/share/nginx/html:ro
+    ports:
+    - "8080:80"
